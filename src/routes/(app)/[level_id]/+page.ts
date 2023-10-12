@@ -1,12 +1,15 @@
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = ({ params }) => {
+export const load: PageLoad = async ({ params, fetch }) => {
+
+    const res = await fetch(`/api/levels?level_id=${params.level_id}`);
+    const json = await res.json();
 
     const levelInfo  = {
         id: params.level_id,
-        name: 'Level One',
-        difficulty: 'Easy',
-        numPuzzles: 1
+        name: json.name,
+        difficulty: json.difficulty,
+        numPuzzles: json.numPuzzles
     };
 
     const levelGames: Array<{ player: string, time: number }> = [];
