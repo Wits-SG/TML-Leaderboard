@@ -4,7 +4,7 @@
   import { Label } from "$lib/components/ui/label";
   import { Gamepad2 } from 'lucide-svelte';
 
-  let darkMode = true;
+  let darkMode = false;
   const toggleDarkMode = () => {
     const currentMode = !darkMode; // flipped because the callback is handled before the value is updated
   
@@ -21,6 +21,20 @@
     { player: 'Player 3', level: 'Level 3', time: 120 },
   ];
 
+  const formatTime = (time: number): string => {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60);
+
+      let result: string;
+      if (minutes > 0) {
+          result = `${minutes}m ${seconds}s`
+      } else {
+          result = `${seconds}s`
+      }
+
+      return result;
+  }
+
 </script>
 
 <div class="grid grid-cols-[1fr_4fr] w-screen h-screen">
@@ -36,9 +50,9 @@
             </Button>
 
             <Button variant="outline" href="/">Home</Button>
-            <Button variant="outline" href="/level1">Level One</Button>
-            <Button variant="outline" href="/level2">Level Two</Button>
-            <Button variant="outline" href="/level3">Level Three</Button>
+            <Button variant="outline" href="/8f3f4b29-38a7-4b13-baa2-95fde6530d7f">Level One</Button>
+            <Button variant="outline" href="/f39a8262-ee35-4e9a-92a4-0e43848a7d74">Level Two</Button>
+            <Button variant="outline" href="/b754a3e7-6f90-4ef6-97d3-9a8d7b4ea929">Level Three</Button>
           </section>
         </nav>
 
@@ -47,7 +61,7 @@
 
           <ul class="list-inside pl-5">
             {#each recentGames as game}
-              <li>{game.player}: {game.level} - {game.time} s</li>
+              <li>{game.player}: {game.level} - {formatTime(game.time)}</li>
             {/each}
           </ul>
         </div>
@@ -66,7 +80,7 @@
         </div>
 
 
-        <div class="w-full h-fit border-b-2 border-black dark:border-white flex flex-col justify-center items-start py-5 gap-2">
+        <div class="w-full h-fit border-b-2 border-black dark:border-white flex flex-col justify-center items-start py-5 gap-2 pl-5">
           <section class="w-full h-fit flex flex-row justify-start items-center space-x-5">
             <Switch id="dark-mode" bind:checked={darkMode} onCheckedChange={toggleDarkMode}/>
             <Label for="dark-mode">Dark Mode</Label>
@@ -75,7 +89,7 @@
 
     </div>
 
-    <div class="w-full h-full flex flex-col col-start-2 col-span-1 bg-blue-500">
+    <div class="w-full h-full col-start-2 col-span-1 dark:text-white dark:bg-neutral-950 bg-neutral-50">
       <slot />
     </div>
 </div>
