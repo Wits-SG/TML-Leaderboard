@@ -1,5 +1,6 @@
 import { error, json } from '@sveltejs/kit';
 import { turso } from '$lib/turso.js';
+import type { RequestEvent } from './$types.js';
 
 export const GET = async ({ url }) => {
 
@@ -31,4 +32,22 @@ export const GET = async ({ url }) => {
             throw error(500, 'Something went wrong');
         }
     }
+}
+
+export const POST = async (event: RequestEvent) => {
+    const newGame: {
+        playerName: string, playerTime: number, gameDate: number, levelId: string
+    } = await event.request.json();
+
+    try {
+        await turso.execute({
+            sql: 'INSERT INTO games (player_name, player_time, game_date, level_id) VALUES (?, ?, ?, ?)',
+            args: [ newGame.playerName, newGame.playerTime, newGame.gameDate, newGame.levelId ]
+        });
+
+        return new Response('Successfully inserted game');
+    } catch {
+        throw error(500, 'Something went wrong');
+    }
+
 }
