@@ -43,8 +43,8 @@
                 {#each data.games as game, i}
                     <Table.Row>
                         <Table.Cell>{i + 1}</Table.Cell>
-                        <Table.Cell class="font-medium">{game.player}</Table.Cell>
-                        <Table.Cell class="">{formatTime(game.time)}</Table.Cell>
+                        <Table.Cell class="font-medium">{game.playerName}</Table.Cell>
+                        <Table.Cell class="">{formatTime(game.playerTime)}</Table.Cell>
                     </Table.Row>
                 {/each}
             </Table.Body>
