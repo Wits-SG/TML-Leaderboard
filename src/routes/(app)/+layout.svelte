@@ -15,12 +15,6 @@
     }
   } 
 
-  let recentGames = [
-    { player: 'Player 1', level: 'Level 1', time: 120 },
-    { player: 'Player 2', level: 'Level 2', time: 120 },
-    { player: 'Player 3', level: 'Level 3', time: 120 },
-  ];
-
   const formatTime = (time: number): string => {
       const minutes = Math.floor(time / 60);
       const seconds = Math.floor(time % 60);
@@ -55,16 +49,6 @@
             <Button variant="outline" href="/b754a3e7-6f90-4ef6-97d3-9a8d7b4ea929">Level Three</Button>
           </section>
         </nav>
-
-        <div class="w-full h-fit border-b-2 border-black  dark:border-white flex flex-col justify-center items-start py-5 gap-2">
-          <h2 class="text-2xl font-sans text-left w-fit border-b-2 border-black dark:border-white ">Recent Games</h2>
-
-          <ul class="list-inside pl-5">
-            {#each recentGames as game}
-              <li>{game.player}: {game.level} - {formatTime(game.time)}</li>
-            {/each}
-          </ul>
-        </div>
 
         <div class="w-full h-fit border-b-2 border-black dark:border-white  flex flex-col justify-center items-start py-5 gap-2">
           <h3 class="text-xl font-sans text-left w-fit border-b-2 border-black">Developers</h3>
