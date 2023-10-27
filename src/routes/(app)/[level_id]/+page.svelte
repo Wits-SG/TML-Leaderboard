@@ -24,14 +24,15 @@
 
     <div class="flex flex-row justify-start items-start gap-10 w-2/3 overflow-y-auto">
         <section class="flex flex-col justify-start items-start w-1/4 gap-2">
-          <h2 class="text-2xl font-sans text-left w-full border-b-2 border-black dark:border-white ">Information</h2>
+            <h2 class="text-2xl font-sans text-left w-full border-b-2 border-primary">Information</h2>
 
-          <ol class="gap-1">
-            <li><b>Difficulty</b>: {data.info.difficulty}</li>
-            <li><b>Number of Puzzles</b>: {data.info.numPuzzles}</li>
-          </ol>
+            <ol class="gap-1">
+                <li><b>Difficulty</b>: {data.info.difficulty}</li>
+                <li><b>Number of Puzzles</b>: {data.info.numPuzzles}</li>
+            </ol>
         </section>
         <div class="w-fit max-h-[70vh] overflow-y-auto">
+            <h2 class="text-2xl font-sans text-left w-full border-b-2 border-primary">Top 100 Times</h2>
             <Table.Root class="w-fit">
                 <Table.Header>
                     <Table.Row>
