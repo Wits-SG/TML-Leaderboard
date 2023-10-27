@@ -1,8 +1,13 @@
+<script lang="ts">
+    import PuzzleCard from '$lib/components/puzzle_card.svelte';
+</script>
+
 <div class="w-full max-h-full flex flex-col justify-center items-center p-10 gap-5">
     <h1 class="text-4xl font-sans text-center w-1/3 border-b-4 border-black dark:border-white py-5">Home</h1>
 
-    <div class="w-full flex flex-row justify-evenly items-start gap-10">
-        <section class="w-80 flex flex-col gap-5">
+    <div class="w-full flex flex-row justify-start items-start gap-10">
+
+        <section class="w-64 flex flex-col gap-5">
             <h2 class="text-2xl font-sans text-center w-full border-b-4 border-primary py-5">Description</h2>
 
             <p>The Magic Library is 3D puzzle game inspired by escape rooms. The player is tasked with solving a series of puzzles scattered across the library.</p>
@@ -21,34 +26,52 @@
             </p>
         </section>
 
-        <section class="max-w-1/2 flex flex-col gap-5">
+        <section class="w-full flex flex-col gap-5">
             <h2 class="text-2xl font-sans text-center w-full border-b-4 border-primary py-5">Puzzles</h2>
 
-            <div class="flex flex-row max-w-4xl gap-5">
-                <section class="flex flex-col gap-2">
-                    <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Office</h3>
-                    <p>Every library needs a wizard, and every wizard needs an office. Wizards always havs spare bits and bobs all over the place, maybe some of the objects have a crystal hidden behind them?</p>
-                </section>
+            <div class="flex flex-row w-full gap-5">
+                <PuzzleCard 
+                    title={'The Office'} 
+                    description={`Every library needs a wizard, and every wizard needs an office. Wizards always havs spare bits and bobs all over the place, maybe some of the objects have a crystal hidden behind them?`} 
+                    solutions={[
+                        `There are three objects, a feather, a wizard's hat and, a cauldron, hidden across the office. Place each of these objects on the red pressure plates from lightest to heaviest.`,
+                        `The feather is found in the main room.`,
+                        `The cauldron is found in the back room.`,
+                        `The hat is found in the upstairs room.`
+                    ]} />
 
-                <section class="flex flex-col gap-2">
-                    <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Music</h3>
-                    <p>Music can calm the soul and guide us through many complex subjects, but only if the musicians have someone to guide them.</p>
-                </section>
+                <PuzzleCard 
+                    title={'The Music'} 
+                    description={`Music can calm the soul and guide us through many complex subjects, but only if the musicians have someone to guide them.`} 
+                    solutions={[
+                        `The instruments need to be played in a random order every game.`,
+                        `The music stand will face the next instrument to be played in the order.`
+                    ]} />
 
-                <section class="flex flex-col gap-2">
-                    <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Hearths</h3>
-                    <p>Libraries need a place to pull up a chair and read some <i>magic</i> books, and nothing beats a good fireplace. Except maybe a magic fireplace, it does however need to be lit first.<p>
-                </section>
+                <PuzzleCard 
+                    title={'The Hearths'} 
+                    description={`Libraries need a place to pull up a chair and read some <i>magic</i> books, and nothing beats a good fireplace. Except maybe a magic fireplace, it does however need to be lit first.`} 
+                    solutions={[
+                        `Each of the four hearths must be lit with the same colour.`,
+                        `The first hearth is just opposite the items.`, 
+                        `The second hearth is behind the instruments.`,
+                        `The third hearth is at the end of the passage to the Mirror and Chess rooms.`,
+                        `The fourth hearth is in the passage to the office.`
+                    ]} />
 
-                <section class="flex flex-col gap-2">
-                    <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Mirror</h3>
-                    <p>Magic mirrors are a staple, they even show us whats really there, even if it doesn't seem like anything is. Now, how do get across this gap?</p>
-                </section>
+                <PuzzleCard 
+                    title={'The Mirror'} 
+                    description={`Magic mirrors are a staple, they even show us whats really there, even if it doesn't seem like anything is. Now, how do get across this gap?`} 
+                    solutions={[
+                        `Look up at the mirror, and walk across the green blocks.`
+                    ]} />
 
-                <section class="flex flex-col gap-2">
-                    <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Chess</h3>
-                    <p>Chess is a game for the intellectually inclined, and our wizard here thinks himself very smart. So smart he's forgotten how his statues are stored...</p>
-                </section>
+                <PuzzleCard 
+                    title={'The Chess'} 
+                    description={`Chess is a game for the intellectually inclined, and our wizard here thinks himself very smart. So smart he's forgotten how his statues are stored...`} 
+                    solutions={[
+                        `Place the pieces on the plinth at the back of the room, in the order they were found on the board. Read from left to right as seen from the entrance.`
+                    ]} />
             </div>
 
         </section>
