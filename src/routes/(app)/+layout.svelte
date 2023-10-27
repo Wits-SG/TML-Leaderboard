@@ -44,7 +44,7 @@
 
         <nav class="w-full h-fit border-b-2 border-black dark:border-white flex flex-col justify-center items-center py-5">
           <section class="w-2/3 flex flex-col gap-1">
-            <Button variant="secondary" href="https://wits-sg.github.io/CGV-Project" >
+            <Button variant="secondary" href="https://lamp.ms.wits.ac.za/home/sspicegirls/" >
               <Gamepad2 class="mr-2"/>
               Play The Magic Library
             </Button>
