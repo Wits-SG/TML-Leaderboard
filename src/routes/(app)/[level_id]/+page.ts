@@ -12,8 +12,8 @@ export const load: PageLoad = async ({ params, fetch }) => {
         numPuzzles: json.numPuzzles
     };
 
-    const gamesResult = await fetch(`/api/games?num_games=15&level_id=${params.level_id}`);
-    const levelGames: Array<{ player: string, time: number }> = await gamesResult.json();
+    const gamesResult = await fetch(`/api/games?num_games=100&level_id=${params.level_id}`);
+    const levelGames: Array<{ playerName: string, playerTime: number }> = await gamesResult.json();
 
     return {
         info: levelInfo,

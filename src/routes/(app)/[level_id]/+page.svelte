@@ -31,24 +31,25 @@
             <li><b>Number of Puzzles</b>: {data.info.numPuzzles}</li>
           </ol>
         </section>
-        <Table.Root class="">
-            <Table.Header>
-                <Table.Row>
-                    <Table.Head class="w-10">Position</Table.Head>
-                    <Table.Head class="w-48">Player</Table.Head>
-                    <Table.Head>Time</Table.Head>
-                </Table.Row>
-            </Table.Header>
-            <Table.Body>
-                {#each data.games as game, i}
+        <div class="w-fit max-h-[70vh] overflow-y-auto">
+            <Table.Root class="w-fit">
+                <Table.Header>
                     <Table.Row>
-                        <Table.Cell>{i + 1}</Table.Cell>
-                        <Table.Cell class="font-medium">{game.playerName}</Table.Cell>
-                        <Table.Cell class="">{formatTime(game.playerTime)}</Table.Cell>
+                        <Table.Head class="w-10">Position</Table.Head>
+                        <Table.Head class="w-[20vw]">Player</Table.Head>
+                        <Table.Head class="w-20">Time</Table.Head>
                     </Table.Row>
-                {/each}
-            </Table.Body>
-        </Table.Root>
-
+                </Table.Header>
+                <Table.Body>
+                    {#each data.games as game, i}
+                        <Table.Row>
+                            <Table.Cell>{i + 1}</Table.Cell>
+                            <Table.Cell class="font-medium">{game.playerName}</Table.Cell>
+                            <Table.Cell class="">{formatTime(game.playerTime)}</Table.Cell>
+                        </Table.Row>
+                    {/each}
+                </Table.Body>
+            </Table.Root>
+        </div>
     </div>
 </div>
