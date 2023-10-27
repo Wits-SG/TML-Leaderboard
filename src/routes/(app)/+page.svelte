@@ -47,7 +47,7 @@
 
                 <section class="flex flex-col gap-2">
                     <h3 class="text-xl font-sans text-center w-full border-b-2 border-secondary py-2">The Chess</h3>
-                    <p>Chess is a game for the intellectually inclined, and our wizard here thinks himself very smart. So smart he's forgooten how his statues are stored...</p>
+                    <p>Chess is a game for the intellectually inclined, and our wizard here thinks himself very smart. So smart he's forgotten how his statues are stored...</p>
                 </section>
             </div>
 
