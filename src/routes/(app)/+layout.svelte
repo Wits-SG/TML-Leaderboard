@@ -32,7 +32,7 @@
 </script>
 
 <div class="grid grid-cols-[1fr_4fr] w-screen h-screen overflow-x-hidden overflow-y-auto">
-    <div class="w-full h-full flex flex-col items-center justify-start col-start-1 col-span-1 p-5 gap-2 bg-neutral-50 dark:bg-neutral-950 dark:text-white overflow-y-auto">
+    <div class="w-full h-full flex flex-col items-start justify-start col-start-1 col-span-1 p-5 gap-2 bg-neutral-50 dark:bg-neutral-950 dark:text-white overflow-y-auto">
 
         <h1 class="text-4xl font-sans text-center w-full border-b-4 border-black dark:border-white py-5">The Magic Library Leaderboard</h1>
 
